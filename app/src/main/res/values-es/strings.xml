@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">Mi Aplicación</string>
+    <string name="users">Usuarios</string>
+    <string name="categories">Categorías</string>
+    <string name="products">Productos</string>
+    <string name="orders">Pedidos</string>
+</resources>

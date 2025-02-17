@@ -1,7 +1,11 @@
 package com.svalero.tiendaapp.domain;
 
+import androidx.room.Entity;
+import androidx.room.PrimaryKey;
+
 import java.time.LocalDate;
 
+@Entity
 public class User {
     private long id;
     private String name;
