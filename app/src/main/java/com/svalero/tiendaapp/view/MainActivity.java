@@ -3,6 +3,7 @@ package com.svalero.tiendaapp.view;
 import android.content.Intent;
 import android.os.Bundle;
 import android.widget.Button;
+import androidx.appcompat.widget.Toolbar;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
@@ -20,10 +21,12 @@ public class MainActivity extends AppCompatActivity {
         EdgeToEdge.enable(this);
         setContentView(R.layout.activity_main);
 
+
         Button btnUsers = findViewById(R.id.btnUsers);
         Button btnCategories = findViewById(R.id.btnCategories);
         Button btnProducts = findViewById(R.id.btnProducts);
         Button btnOrders = findViewById(R.id.btnOrders);
+
 
         btnUsers.setOnClickListener(v -> {
             Intent intent = new Intent(MainActivity.this, UsersActivity.class);

@@ -11,6 +11,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.TiendaApp"
+        android:usesCleartextTraffic="true"
         tools:targetApi="31">
         <activity
             android:name=".view.OrdersActivity"
@@ -32,5 +33,7 @@
         </activity>
         <activity android:name=".view.UsersActivity" />
     </application>
+    <uses-permission android:name="android.permission.INTERNET" />
+
 
 </manifest>

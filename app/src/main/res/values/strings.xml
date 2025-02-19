@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">My App</string>
+    <string name="app_name">My Store</string>
     <string name="users">Users</string>
     <string name="categories">Categories</string>
     <string name="products">Products</string>
