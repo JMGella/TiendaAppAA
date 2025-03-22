@@ -4,4 +4,9 @@
     <string name="categories">Categorías</string>
     <string name="products">Productos</string>
     <string name="orders">Pedidos</string>
+    <string name="name">Nombre</string>
+    <string name="description">Descripción</string>
+    <string name="select_image">Seleccionar imagen</string>
+    <string name="submit">Enviar</string>
+    <string name="add_category">Añadir Categoría</string>
 </resources>

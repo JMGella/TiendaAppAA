@@ -53,5 +53,9 @@ public interface TiendaApiInterface {
     Call<OrderDetail> addOrderDetails(@Path("userId") long userId, @Path("orderId") int orderId, @Body OrderDetail orderDetail);
 
 
+    @POST("categories")
+    Call<Category> addCategory(@Body Category category);
+
+
 
 }

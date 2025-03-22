@@ -2,6 +2,7 @@ package com.svalero.tiendaapp.domain;
 
 import java.time.LocalDate;
 
+
 public class Category {
     private long id;
     private String name;
@@ -17,6 +18,8 @@ public class Category {
         this.active = active;
         this.image = image;
     }
+
+
 
     public long getId(){
         return id;

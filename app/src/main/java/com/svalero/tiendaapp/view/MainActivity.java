@@ -3,13 +3,9 @@ package com.svalero.tiendaapp.view;
 import android.content.Intent;
 import android.os.Bundle;
 import android.widget.Button;
-import androidx.appcompat.widget.Toolbar;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.graphics.Insets;
-import androidx.core.view.ViewCompat;
-import androidx.core.view.WindowInsetsCompat;
 
 import com.svalero.tiendaapp.R;
 
@@ -34,7 +30,7 @@ public class MainActivity extends AppCompatActivity {
         });
 
         btnCategories.setOnClickListener(v -> {
-            Intent intent = new Intent(MainActivity.this, CategoriesActivity.class);
+            Intent intent = new Intent(MainActivity.this, CategoriesListView.class);
             startActivity(intent);
         });
 

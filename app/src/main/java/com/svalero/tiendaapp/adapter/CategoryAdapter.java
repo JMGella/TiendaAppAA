@@ -18,7 +18,8 @@ public class CategoryAdapter extends RecyclerView.Adapter<CategoryAdapter.ViewHo
 
     private List<Category> categoryList = new ArrayList<>();
 
-    public CategoryAdapter() {
+    public CategoryAdapter(List <Category> categoryList) {
+        this.categoryList = categoryList;
 
     }
 

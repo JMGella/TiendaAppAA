@@ -2,56 +2,60 @@ package com.svalero.tiendaapp.view;
 
 import android.os.Bundle;
 import android.widget.Toast;
-import android.widget.Toolbar;
 
 import androidx.activity.EdgeToEdge;
-import androidx.core.graphics.Insets;
-import androidx.core.view.ViewCompat;
-import androidx.core.view.WindowInsetsCompat;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.svalero.tiendaapp.R;
 import com.svalero.tiendaapp.adapter.CategoryAdapter;
-import com.svalero.tiendaapp.api.TiendaApi;
-import com.svalero.tiendaapp.api.TiendaApiInterface;
-import com.svalero.tiendaapp.domain.Category;
 
+import com.svalero.tiendaapp.contract.CategoryListContract;
+import com.svalero.tiendaapp.domain.Category;
+import com.svalero.tiendaapp.presenter.CategoriesListPresenter;
+
+import java.util.ArrayList;
 import java.util.List;
 
-import retrofit2.Call;
-import retrofit2.Callback;
-import retrofit2.Response;
 
-public class CategoriesActivity extends MainActivity {
+public class CategoriesListView extends MainActivity implements CategoryListContract.View {
+
+    private CategoryListContract.Presenter presenter;
 
     private RecyclerView recyclerView;
     private CategoryAdapter adapter;
-    private TiendaApiInterface apiInterface;
+    private List<Category> categoryList;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+
         super.onCreate(savedInstanceState);
         EdgeToEdge.enable(this);
         setContentView(R.layout.activity_categories);
+
+        presenter = new CategoriesListPresenter(this);
+
+        categoryList = new ArrayList<>();
+
         getSupportActionBar().setTitle(R.string.categories);
+        setActivityTitle(getString(R.string.categories));
 
         recyclerView = findViewById(R.id.recyclerViewCategories);
         recyclerView.setLayoutManager(new GridLayoutManager(this, 2));
 
-        adapter = new CategoryAdapter();
+        adapter = new CategoryAdapter(categoryList);
         recyclerView.setAdapter(adapter);
 
-        apiInterface = TiendaApi.buildInstance();
-        loadCategories();
+
+
+        presenter.loadCategories();
 
 
 
-
-        setActivityTitle(getString(R.string.categories));
     }
 
-    private void loadCategories() {
+    /*private void loadCategories() {
         Call<List<Category>> call = apiInterface.getCategories();
         call.enqueue(new Callback<List<Category>>() {
             @Override
@@ -62,18 +66,32 @@ public class CategoriesActivity extends MainActivity {
                     adapter.notifyDataSetChanged();
                 } else {
                     // Manejar error en la respuesta
-                    Toast.makeText(CategoriesActivity.this, "Error al cargar categorías", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(CategoriesListView.this, "Error al cargar categorías", Toast.LENGTH_SHORT).show();
                 }
             }
 
             @Override
             public void onFailure(Call<List<Category>> call, Throwable t) {
                 // Manejar fallo en la llamada
-                Toast.makeText(CategoriesActivity.this, "Error de conexión", Toast.LENGTH_SHORT).show();
+                Toast.makeText(CategoriesListView.this, "Error de conexión", Toast.LENGTH_SHORT).show();
             }
         });
+    }*/
+
+
+    @Override
+    public void listCategories(List<Category> categories) {
+        this.categoryList.addAll(categories);
+        adapter.notifyDataSetChanged();
     }
 
+    @Override
+    public void showErrorMessage(String message) {
+        Toast.makeText(this, message, Toast.LENGTH_SHORT).show();
+    }
 
-
+    @Override
+    public void showSuceessMessage(String message) {
+        Toast.makeText(this, message, Toast.LENGTH_SHORT).show();
+    }
 }
