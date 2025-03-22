@@ -39,8 +39,10 @@ public class AddCategoryView extends MainActivity implements AddCategoryContract
         String name = ((EditText) findViewById(R.id.etName)).getText().toString();
         String description = ((EditText) findViewById(R.id.etDescription)).getText().toString();
         Boolean active = true;
+        String image ="noimage.jpg";
 
-
+        Category category = new Category(name, description, active, image);
+        presenter.addCategory(category);
 
     }
 
