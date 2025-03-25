@@ -7,6 +7,7 @@ import android.view.MenuItem;
 import android.widget.Toast;
 
 import androidx.activity.EdgeToEdge;
+import androidx.appcompat.widget.Toolbar;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -39,8 +40,13 @@ public class CategoriesListView extends MainActivity implements CategoryListCont
         presenter = new CategoriesListPresenter(this);
         categoryList = new ArrayList<>();
 
-        getSupportActionBar().setTitle(R.string.categories);
-        setActivityTitle(getString(R.string.categories));
+        Toolbar toolbar = findViewById(R.id.toolbar);
+        if (toolbar != null) {
+            setSupportActionBar(toolbar);
+            getSupportActionBar().setTitle(R.string.categories);
+            setActivityTitle(getString(R.string.categories));
+        }
+
 
         recyclerView = findViewById(R.id.recyclerViewCategories);
         recyclerView.setLayoutManager(new GridLayoutManager(this, 2));

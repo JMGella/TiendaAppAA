@@ -1,5 +1,6 @@
 plugins {
     alias(libs.plugins.android.application)
+
 }
 
 android {
@@ -44,4 +45,6 @@ dependencies {
     annotationProcessor("androidx.room:room-compiler:2.4.3")
     implementation ("com.squareup.retrofit2:retrofit:2.9.0")
     implementation ("com.squareup.retrofit2:converter-gson:2.4.0")
+
+
 }

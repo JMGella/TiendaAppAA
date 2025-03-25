@@ -53,7 +53,7 @@ public class Category {
         return description;
     }
 
-//    public LocalDate getCreationDate(){
+//    public Date getCreationDate(){
 //        return creationDate;
 //    }
 

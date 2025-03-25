@@ -1,16 +1,17 @@
 package com.svalero.tiendaapp.domain;
 
 import java.time.LocalDate;
+import java.util.Date;
 
 public class Order {
     private long id;
     private String status;
     private Float total;
     private String address;
-    private LocalDate creationDate;
+    private Date creationDate;
     private String paymentMethod;
 
-    public Order(String status, Float total, String address, LocalDate creationDate, String paymentMethod){
+    public Order(String status, Float total, String address, Date creationDate, String paymentMethod){
         this.status = status;
         this.total = total;
         this.address = address;
@@ -34,7 +35,7 @@ public class Order {
         this.address = address;
     }
 
-    public void setCreationDate(LocalDate creationDate){
+    public void setCreationDate(Date creationDate){
         this.creationDate = creationDate;
     }
 
@@ -54,7 +55,7 @@ public class Order {
         return address;
     }
 
-    public LocalDate getCreationDate(){
+    public Date getCreationDate(){
         return creationDate;
     }
 

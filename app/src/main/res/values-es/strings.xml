@@ -4,9 +4,24 @@
     <string name="categories">Categorías</string>
     <string name="products">Productos</string>
     <string name="orders">Pedidos</string>
+    <string name="tickets">Tickets</string>
     <string name="name">Nombre</string>
     <string name="description">Descripción</string>
     <string name="select_image">Seleccionar imagen</string>
     <string name="submit">Enviar</string>
     <string name="add_category">Añadir Categoría</string>
+    <string name="add_ticket">Añadir ticket</string>
+    <string name="edit_ticket">Editar ticket</string>
+    <string name="delete_ticket">Borrar ticket</string>
+    <string name="category">Categoría</string>
+    <string name="creation_date">Fecha de creación</string>
+    <string name="expiration_date">Fecha de expiración</string>
+    <string name="important">Importante</string>
+    <string name="date_hint">DD/MM/AAAA</string>
+    <string name="required_field">Campo requerido</string>
+    <string name="notickets">No hay tickets disponibles</string>
+    <string name="deleted">Eliminado</string>
+    <string name="yes">Si</string>
+    <string name="delete_ticket_dialog">¿Seguro que quieres borrar el ticket?</string>
+
 </resources>

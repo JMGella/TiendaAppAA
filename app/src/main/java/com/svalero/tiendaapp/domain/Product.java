@@ -1,18 +1,19 @@
 package com.svalero.tiendaapp.domain;
 
 import java.time.LocalDate;
+import java.util.Date;
 
 public class Product {
     private long id;
     private String name;
     private String description;
     private Float price;
-    private LocalDate creationDate;
+    private Date creationDate;
     private Boolean active;
     private String image;
 
 
-    public Product(String name, String description, Float price, LocalDate creationDate, Boolean active, String image){
+    public Product(String name, String description, Float price, Date creationDate, Boolean active, String image){
         this.name = name;
         this.description = description;
         this.price = price;
@@ -37,7 +38,7 @@ public class Product {
         this.price = price;
     }
 
-    public void setCreationDate(LocalDate creationDate){
+    public void setCreationDate(Date creationDate){
         this.creationDate = creationDate;
     }
 
@@ -61,7 +62,7 @@ public class Product {
         return price;
     }
 
-    public LocalDate getCreationDate(){
+    public Date getCreationDate(){
         return creationDate;
     }
 

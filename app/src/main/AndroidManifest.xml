@@ -16,6 +16,12 @@
         android:usesCleartextTraffic="true"
         tools:targetApi="31">
         <activity
+            android:name=".view.AddTicketView"
+            android:exported="false" />
+        <activity
+            android:name=".view.TicketsView"
+            android:exported="false" />
+        <activity
             android:name=".view.AddCategoryView"
             android:exported="false" />
         <activity

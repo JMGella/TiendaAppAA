@@ -4,22 +4,23 @@ import androidx.room.Entity;
 import androidx.room.PrimaryKey;
 
 import java.time.LocalDate;
+import java.util.Date;
 
 @Entity
 public class User {
     private long id;
     private String name;
     private String email;
-    private LocalDate birthDate;
+    private Date birthDate;
     private Boolean active;
     private String address;
     private String phone;
-    private LocalDate creationDate;
+    private Date creationDate;
     private String latitude;
     private String longitude;
 
 
-    public User(String name, String email, LocalDate birthDate, Boolean active, String address, String phone, LocalDate creationDate, String latitude, String longitude) {
+    public User(String name, String email, Date birthDate, Boolean active, String address, String phone, Date creationDate, String latitude, String longitude) {
         this.name = name;
         this.email = email;
         this.birthDate = birthDate;
@@ -43,7 +44,7 @@ public class User {
         this.email = email;
     }
 
-    public void setBirthDate(LocalDate birthDate){
+    public void setBirthDate(Date birthDate){
         this.birthDate = birthDate;
     }
 
@@ -59,7 +60,7 @@ public class User {
         this.phone = phone;
     }
 
-    public void setCreationDate(LocalDate creationDate){
+    public void setCreationDate(Date creationDate){
         this.creationDate = creationDate;
     }
 
@@ -79,7 +80,7 @@ public class User {
         return email;
     }
 
-    public LocalDate getBirthDate(){
+    public Date getBirthDate(){
         return birthDate;
     }
 
@@ -95,7 +96,7 @@ public class User {
         return phone;
     }
 
-    public LocalDate getCreationDate(){
+    public Date getCreationDate(){
         return creationDate;
     }
 

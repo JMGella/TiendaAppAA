@@ -2,7 +2,9 @@ package com.svalero.tiendaapp.view;
 
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
@@ -19,6 +21,9 @@ import com.svalero.tiendaapp.presenter.AddCategoryPresenter;
 public class AddCategoryView extends MainActivity implements AddCategoryContract.View {
 
     private AddCategoryPresenter presenter;
+    private EditText etName;
+    private EditText etDescription;
+    private Button btnSubmit;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,17 +34,31 @@ public class AddCategoryView extends MainActivity implements AddCategoryContract
 
         presenter = new AddCategoryPresenter(this);
 
+        etName = findViewById(R.id.etName);
+        etDescription = findViewById(R.id.etDescription);
+        btnSubmit = findViewById(R.id.btnSubmit);
 
+        btnSubmit.setOnClickListener(v -> register(v));
 
 
     }
 
     public void register(View view) {
 
-        String name = ((EditText) findViewById(R.id.etName)).getText().toString();
+        String name = etName.getText().toString();
         String description = ((EditText) findViewById(R.id.etDescription)).getText().toString();
         Boolean active = true;
         String image ="noimage.jpg";
+
+        if (name.isEmpty()) {
+            etName.setError(getString(R.string.required_field));
+            return;
+        }
+
+        if (description.isEmpty()) {
+            etDescription.setError(getString(R.string.required_field));
+            return;
+        }
 
         Category category = new Category(name, description, active, image);
         presenter.addCategory(category);
@@ -48,13 +67,13 @@ public class AddCategoryView extends MainActivity implements AddCategoryContract
 
     @Override
     public void showErrorMessage(String message) {
-        Snackbar.make(findViewById(R.id.btnSubmit), message, Snackbar.LENGTH_LONG).show();
+        Toast.makeText(this, message, Toast.LENGTH_LONG).show();
 
     }
 
     @Override
     public void showSuceessMessage(String message) {
-        Snackbar.make(findViewById(R.id.btnSubmit), message, Snackbar.LENGTH_LONG).show();
+        Toast.makeText(this, message, Toast.LENGTH_LONG).show();
 
     }
 }

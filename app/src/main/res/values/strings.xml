@@ -4,9 +4,23 @@
     <string name="categories">Categories</string>
     <string name="products">Products</string>
     <string name="orders">Orders</string>
+    <string name="tickets">Tickets</string>
     <string name="name">Name</string>
     <string name="description">Description</string>
     <string name="select_image">Select Image</string>
     <string name="submit">Submit</string>
     <string name="add_category">Add Category</string>
+    <string name="add_ticket">Add ticket</string>
+    <string name="edit_ticket">Edit ticket</string>
+    <string name="delete_ticket">Delete ticket</string>
+    <string name="category">Category</string>
+    <string name="creation_date">Creation Date</string>
+    <string name="expiration_date">Expiration Date</string>
+    <string name="important">Important</string>
+    <string name="date_hint">DD/MM/YYYY</string>
+    <string name="required_field">Required Field</string>
+    <string name="notickets">No tickets available</string>
+    <string name="deleted">Deleted</string>
+    <string name="yes">Yes</string>
+    <string name="delete_ticket_dialog">Are you sure you want to delete this ticket?</string>
 </resources>
