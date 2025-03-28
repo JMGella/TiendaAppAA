@@ -23,5 +23,28 @@
     <string name="deleted">Eliminado</string>
     <string name="yes">Si</string>
     <string name="delete_ticket_dialog">¿Seguro que quieres borrar el ticket?</string>
+    <string name="users_title">Usuarios</string>
+    <string name="no_users_available">No hay usuarios disponibles</string>
+    <string name="add_user">Añadir usuario</string>
+    <string name="user_status">Estado del usuario</string>
+    <string name="edit">Editar</string>
+    <string name="delete">Eliminar</string>
+    <string name="location">Ubicación</string>
+    <string name="search">Buscar</string>
+    <string name="refresh">Actualizar</string>
+    <string name="personal_information">Información Personal</string>
+    <string name="email">Correo Electrónico</string>
+    <string name="phone">Teléfono</string>
+    <string name="birth_date">Fecha de Nacimiento</string>
+    <string name="address_information">Dirección</string>
+    <string name="address">Dirección Postal</string>
+    <string name="location_information">Ubicación</string>
+    <string name="latitude">Latitud</string>
+    <string name="longitude">Longitud</string>
+    <string name="get_current_location">Obtener Ubicación Actual</string>
+    <string name="status_information">Estado</string>
+    <string name="user_active">Usuario Activo</string>
+    <string name="save_user">Guardar Usuario</string>
+    <string name="select_this_location">Seleccionar</string>
+    </resources>
 
-</resources>

@@ -1,7 +1,6 @@
 package com.svalero.tiendaapp.domain;
 
 import androidx.room.Entity;
-import androidx.room.PrimaryKey;
 
 import java.time.LocalDate;
 import java.util.Date;
@@ -11,16 +10,16 @@ public class User {
     private long id;
     private String name;
     private String email;
-    private Date birthDate;
+    private String birthDate;
     private Boolean active;
     private String address;
     private String phone;
-    private Date creationDate;
+    private String creationDate;
     private String latitude;
     private String longitude;
 
 
-    public User(String name, String email, Date birthDate, Boolean active, String address, String phone, Date creationDate, String latitude, String longitude) {
+    public User(String name, String email, String birthDate, Boolean active, String address, String phone, String creationDate, String latitude, String longitude) {
         this.name = name;
         this.email = email;
         this.birthDate = birthDate;
@@ -44,9 +43,7 @@ public class User {
         this.email = email;
     }
 
-    public void setBirthDate(Date birthDate){
-        this.birthDate = birthDate;
-    }
+
 
     public void setActive(Boolean active){
         this.active = active;
@@ -60,9 +57,7 @@ public class User {
         this.phone = phone;
     }
 
-    public void setCreationDate(Date creationDate){
-        this.creationDate = creationDate;
-    }
+
 
     public void setLatitude(String latitude){
         this.latitude = latitude;
@@ -80,7 +75,7 @@ public class User {
         return email;
     }
 
-    public Date getBirthDate(){
+    public String getBirthDate(){
         return birthDate;
     }
 
@@ -96,7 +91,7 @@ public class User {
         return phone;
     }
 
-    public Date getCreationDate(){
+    public String getCreationDate(){
         return creationDate;
     }
 

@@ -1,17 +1,31 @@
 package com.svalero.tiendaapp.util;
 
+import android.icu.text.SimpleDateFormat;
+
+
+import java.text.ParseException;
 import java.time.LocalDate;
-import java.time.format.DateTimeFormatter;
-import java.util.Date;
+
+
 
 public class DateUtil {
 
-    public static final String DATE_PATTERN = "dd/MM/yyyy";
-    public static LocalDate format(String date){
-        return LocalDate.parse(date, DateTimeFormatter.ofPattern(DATE_PATTERN));
+
+    private final String DATTE_PATTERN = "dd/MM/yyyy";
+
+
+
+
+    public String format(LocalDate date) {
+        if (date == null) return "N/A";
+        return date.toString();
     }
 
-    public static String parse(LocalDate date){
-        return date.format(DateTimeFormatter.ofPattern(DATE_PATTERN));
+    public LocalDate parse(String date) throws ParseException {
+        return LocalDate.parse(date);
+    }
+
+    public LocalDate today(){
+        return LocalDate.now();
     }
 }

@@ -7,10 +7,8 @@ import android.widget.Button;
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
-import androidx.room.Room;
 
 import com.svalero.tiendaapp.R;
-import com.svalero.tiendaapp.db.AppDatabase;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -38,7 +36,7 @@ public class MainActivity extends AppCompatActivity {
 
 
         btnUsers.setOnClickListener(v -> {
-            Intent intent = new Intent(MainActivity.this, UsersActivity.class);
+            Intent intent = new Intent(MainActivity.this, UsersView.class);
             startActivity(intent);
         });
 

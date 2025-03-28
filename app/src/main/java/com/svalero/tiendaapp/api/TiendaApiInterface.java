@@ -12,6 +12,7 @@ import retrofit2.Call;
 import retrofit2.http.Body;
 import retrofit2.http.GET;
 import retrofit2.http.POST;
+import retrofit2.http.PUT;
 import retrofit2.http.Path;
 
 public interface TiendaApiInterface {
@@ -45,6 +46,12 @@ public interface TiendaApiInterface {
 
     @GET("users/{userId}")
     Call<User> getUserById(@Path("userId") long userId);
+
+    @POST("users")
+    Call<User> addUser(@Body User user);
+
+    @PUT("users/{userId}")
+    Call<User> updateUser(@Path("userId") long userId, @Body User user);
 
     @POST("users/{userId}/orders")
     Call<Order> createOrder(@Path("userId") long userId, @Body Order order);
