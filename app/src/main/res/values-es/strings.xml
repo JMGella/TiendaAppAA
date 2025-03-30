@@ -49,6 +49,9 @@
     <string name="location_not_available">Ubicación no disponible</string>
     <string name="location_not_available_message">Este usuario no tiene una ubicación registrada.</string>
     <string name="ok">Aceptar</string>
+    <string name="cancel">Cancelar</string>
+    <string name="delete_user">Borrar Usuario</string>
+    <string name="delete_user_dialog">¿Estas seguro de que quieres borrar el usuario?</string>
     </resources>
 
 

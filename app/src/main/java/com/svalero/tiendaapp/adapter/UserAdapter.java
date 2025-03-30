@@ -11,10 +11,13 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 import com.svalero.tiendaapp.R;
+import com.svalero.tiendaapp.contract.UserContract;
 import com.svalero.tiendaapp.domain.User;
+import com.svalero.tiendaapp.presenter.UserPresenter;
 import com.svalero.tiendaapp.util.DateUtil;
 import com.svalero.tiendaapp.view.AddUserView;
 import com.svalero.tiendaapp.view.UserLocationView;
+import com.svalero.tiendaapp.view.UsersView;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -23,13 +26,12 @@ import java.util.List;
 public class UserAdapter extends RecyclerView.Adapter<UserAdapter.ViewHolder> {
 
     private List<User> userList;
-    private final DateUtil dateUtil;
+
 
 
 
     public UserAdapter() {
         this.userList = new ArrayList<>();
-        this.dateUtil = new DateUtil();
     }
 
 
@@ -56,7 +58,7 @@ public class UserAdapter extends RecyclerView.Adapter<UserAdapter.ViewHolder> {
         holder.tvPhone.setText(user.getPhone());
         holder.tvAddress.setText(user.getAddress());
         holder.tvBirthDate.setText(user.getBirthDate());
-       holder.tvCreationDate.setText(user.getCreationDate());
+        holder.tvCreationDate.setText(user.getCreationDate());
 
 
 
@@ -67,11 +69,7 @@ public class UserAdapter extends RecyclerView.Adapter<UserAdapter.ViewHolder> {
         }
 
 
-        holder.btnEdit.setOnClickListener(v -> {
-            Intent intent = new Intent(v.getContext(), AddUserView.class);
-            intent.putExtra("USER_ID", user.getId());  //TODO edit user
-            v.getContext().startActivity(intent);
-        });
+
 
 
         holder.btnLocation.setOnClickListener(v -> {
@@ -93,6 +91,21 @@ public class UserAdapter extends RecyclerView.Adapter<UserAdapter.ViewHolder> {
             intent.putExtra("USER_LONGITUDE", user.getLongitude());
             v.getContext().startActivity(intent);
         });
+
+
+        holder.btnDelete.setOnClickListener(v -> {
+            AlertDialog.Builder builder = new AlertDialog.Builder(v.getContext());
+            builder.setTitle(R.string.delete_user);
+            builder.setMessage(R.string.delete_user_dialog);
+            builder.setPositiveButton(R.string.ok, (dialog, which) -> {
+                UserPresenter userPresenter = new UserPresenter((UserContract.View) v.getContext());
+                userPresenter.deleteUser(user.getId());
+
+
+            });
+            builder.setNegativeButton(R.string.cancel, null);
+            builder.show();
+        });
     }
 
     @Override
@@ -108,8 +121,9 @@ public class UserAdapter extends RecyclerView.Adapter<UserAdapter.ViewHolder> {
         TextView tvBirthDate;
         TextView tvCreationDate;
         ImageView ivStatus;
-        Button btnEdit;
+
         Button btnLocation;
+        Button btnDelete;
 
         ViewHolder(@NonNull View itemView) {
             super(itemView);
@@ -120,8 +134,8 @@ public class UserAdapter extends RecyclerView.Adapter<UserAdapter.ViewHolder> {
             tvBirthDate = itemView.findViewById(R.id.tvBirthDate);
             tvCreationDate = itemView.findViewById(R.id.tvCreationDate);
             ivStatus = itemView.findViewById(R.id.ivStatus);
-            btnEdit = itemView.findViewById(R.id.btnEdit);
             btnLocation = itemView.findViewById(R.id.btnLocation);
+            btnDelete = itemView.findViewById(R.id.btnDelete);
         }
     }
 }

@@ -25,5 +25,6 @@ public interface AddUserContract {
         void showSuccessMessage(String message);
         void showErrorMessage(String message);
         void updateLocationFields(String latitude, String longitude);
+        void goBack();
     }
 }

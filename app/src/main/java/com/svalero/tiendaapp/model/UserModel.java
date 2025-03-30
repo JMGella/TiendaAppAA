@@ -35,5 +35,22 @@ public class UserModel implements UserContract.Model {
 
     }
 
+    @Override
+    public void deleteUser(long userId , UserContract.Model.OnDeleteUserListener listener) {
+        TiendaApiInterface apiInterface = TiendaApi.buildInstance();
+        Call<Void> call = apiInterface.deleteUser(userId);
+        call.enqueue(new Callback<Void>() {
+            @Override
+            public void onResponse(Call<Void> call, Response<Void> response) {
+                listener.onDeleteUserSuccess();
+            }
+
+            @Override
+            public void onFailure(Call<Void> call, Throwable t) {
+                listener.onDeleteUserFailure(t.getMessage());
+            }
+        });
+    }
+
 
 }

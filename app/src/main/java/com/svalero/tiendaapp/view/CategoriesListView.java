@@ -54,8 +54,6 @@ public class CategoriesListView extends MainActivity implements CategoryListCont
         categoryAdapter = new CategoryAdapter(categoryList);
         recyclerView.setAdapter(categoryAdapter);
 
-        presenter.loadCategories();
-
     }
 
 
@@ -89,5 +87,16 @@ public class CategoriesListView extends MainActivity implements CategoryListCont
     @Override
     public void showSuceessMessage(String message) {
         Toast.makeText(this, message, Toast.LENGTH_SHORT).show();
+    }
+
+    @Override
+    public void onResume() {
+        super.onResume();
+        cleanAndLoad();
+    }
+
+    private void cleanAndLoad() {
+        categoryList.clear();
+        presenter.loadCategories();
     }
 }

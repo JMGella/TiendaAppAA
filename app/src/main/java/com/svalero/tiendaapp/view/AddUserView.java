@@ -58,15 +58,19 @@ public class AddUserView extends MainActivity implements AddUserContract.View,  
     private String latitude;
     private String longitude;
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         EdgeToEdge.enable(this);
         setContentView(R.layout.activity_add_user_view);
 
+
+
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         getSupportActionBar().setTitle(R.string.add_user);
+
 
         presenter = new AddUserPresenter(this);
 
@@ -82,11 +86,7 @@ public class AddUserView extends MainActivity implements AddUserContract.View,  
         etLongitude = findViewById(R.id.etLongitude);
         swActive = findViewById(R.id.swActive);
         btnSave = findViewById(R.id.btnSave);
-//        btnSelectLocation = findViewById(R.id.btnSelectLocation);
-//        btnSelectLocation.setOnClickListener(v -> {
-//            etLatitude.setText(latitude);
-//            etLongitude.setText(longitude);
-//        });
+
         mapView = findViewById(R.id.mapView);
 
 
@@ -193,6 +193,11 @@ public class AddUserView extends MainActivity implements AddUserContract.View,  
         latitude = String.valueOf(point.latitude());
         updateLocationFields(latitude, longitude);
         return true;
+    }
+
+    @Override
+    public void goBack() {
+        finish();
     }
 
 

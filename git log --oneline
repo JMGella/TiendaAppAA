@@ -1,0 +1,78 @@
+[33mcommit f08916bf1c92769f3be988a331d8c29304be5891[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mmain[m[33m, [m[1;31morigin/main[m[33m)[m
+Author: JMGella <151771028+JMGella@users.noreply.github.com>
+Date:   Fri Mar 28 19:17:55 2025 +0100
+
+    rm st grd kts
+
+[33mcommit a88aa3aaa229f7f58800d97cbd5270e6953f16f1[m
+Author: JMGella <151771028+JMGella@users.noreply.github.com>
+Date:   Fri Mar 28 19:16:42 2025 +0100
+
+    quitar dev config
+
+[33mcommit 73885f4d1be29e09240adf66d180e847d2a9e28b[m
+Author: JMGella <151771028+JMGella@users.noreply.github.com>
+Date:   Fri Mar 28 19:09:49 2025 +0100
+
+    Remove sensitive config files from version control
+
+[33mcommit bdf9278fd2a4dee93e36c450ecc0c8106035c294[m
+Author: JMGella <151771028+JMGella@users.noreply.github.com>
+Date:   Fri Mar 28 16:56:48 2025 +0100
+
+    añadido lista usuarios y añadir usuarios con mapbox
+
+[33mcommit 92b9b57cb22d550b4bead09b5a8e69d4081db7f0[m
+Author: JMGella <151771028+JMGella@users.noreply.github.com>
+Date:   Tue Mar 25 18:53:56 2025 +0100
+
+    añadida base de datos tickets y su crud
+
+[33mcommit 71974f2f52716229b70881cc2f7e0882e3238a5d[m
+Author: JMGella <151771028+JMGella@users.noreply.github.com>
+Date:   Sat Mar 22 19:52:45 2025 +0100
+
+    añadida funcionalidad añadir categoria
+
+[33mcommit 8516245a463a3608cc7f3819aef873d04b8b999f[m
+Author: JMGella <151771028+JMGella@users.noreply.github.com>
+Date:   Sat Mar 22 19:23:51 2025 +0100
+
+    hecho patron mvp en lista de categorias y añadida vista para añadir categorias a la api
+
+[33mcommit bca96a4535a7e3f1d9cccf4320cc524a5d98f328[m
+Author: JMGella <151771028+JMGella@users.noreply.github.com>
+Date:   Wed Feb 19 18:03:40 2025 +0100
+
+    muestra lista categorias
+
+[33mcommit 1af790d5ec7347f94760b3f1d685b5f2931239ec[m
+Author: JMGella <151771028+JMGella@users.noreply.github.com>
+Date:   Mon Feb 17 13:11:35 2025 +0100
+
+    añadidas actividades principales y cambio de titulo en navbar
+
+[33mcommit 749bc7b5c3539bb48eb9c09ab0ae0c414a823961[m
+Author: JMGella <151771028+JMGella@users.noreply.github.com>
+Date:   Mon Feb 17 12:56:12 2025 +0100
+
+    creado main layout y activities principales
+
+[33mcommit 07dd487061d64d6928b0f3c2075e775dc2c5dc24[m
+Merge: e2bcde1 1c91c68
+Author: JMGella <151771028+JMGella@users.noreply.github.com>
+Date:   Mon Feb 17 11:34:20 2025 +0100
+
+    merge
+
+[33mcommit 1c91c68062e7631ed8f6b9b8bfefc358b21b3b8a[m[33m ([m[1;31morigin/master[m[33m, [m[1;32mmaster[m[33m)[m
+Author: JMGella <151771028+JMGella@users.noreply.github.com>
+Date:   Mon Feb 17 11:28:31 2025 +0100
+
+    primer commit
+
+[33mcommit e2bcde151fc52cfcafd803657e3e0a5246cf7b29[m
+Author: JMGella <151771028+JMGella@users.noreply.github.com>
+Date:   Mon Feb 17 11:22:44 2025 +0100
+
+    Initial commit

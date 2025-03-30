@@ -76,4 +76,9 @@ public class AddCategoryView extends MainActivity implements AddCategoryContract
         Toast.makeText(this, message, Toast.LENGTH_LONG).show();
 
     }
+
+    @Override
+    public void goBack() {
+        finish();
+    }
 }

@@ -23,6 +23,7 @@ public class AddCategoryPresenter implements AddCategoryContract.Presenter, AddC
     @Override
     public void onAddCategoriesSuccess(Category category) {
         view.showSuceessMessage("Categoría " + category.getName() + " añadida correctamente");
+        view.goBack();
     }
 
     @Override

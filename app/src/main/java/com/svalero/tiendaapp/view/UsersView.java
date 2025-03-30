@@ -83,6 +83,17 @@ public class UsersView extends MainActivity implements UserContract.View {
 
     }
 
+    @Override
+    public void goBack() {
+        finish();
+    }
+
+    @Override
+    public void onResume() {
+        super.onResume();
+        presenter.loadUsers();
+    }
+
 
 
 }

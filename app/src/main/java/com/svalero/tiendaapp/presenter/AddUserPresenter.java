@@ -38,11 +38,12 @@ public class AddUserPresenter implements AddUserContract.Presenter, AddUserContr
 
     @Override
     public void onUserSaved(boolean success) {
-        if (success)
+        if (success) {
             view.showSuccessMessage("Usuario guardado correctamente");
-        else
+            view.goBack();
+        } else {
             view.showErrorMessage("No se pudo guardar el usuario");
-
+        }
     }
 
     @Override

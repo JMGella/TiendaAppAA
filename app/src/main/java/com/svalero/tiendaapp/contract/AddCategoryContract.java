@@ -19,6 +19,7 @@ public interface AddCategoryContract {
 
         void showErrorMessage(String message);
         void showSuceessMessage(String message);
+        void goBack();
 
     }
 

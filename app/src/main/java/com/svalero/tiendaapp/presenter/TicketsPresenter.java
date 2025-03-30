@@ -27,13 +27,12 @@ public class TicketsPresenter implements TicketsContract.Presenter {
     @Override
     public void addTicket(Ticket ticket) {
         model.addTicket(ticket);
-        // Actualiza la vista con el nuevo ticket
+
     }
 
     @Override
     public void deleteTicket(Ticket ticket) {
         model.deleteTicket(ticket.getId());
-        // Actualiza la vista eliminando el ticket
     }
 
 
