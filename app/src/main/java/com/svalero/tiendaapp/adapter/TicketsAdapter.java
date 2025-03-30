@@ -70,7 +70,7 @@ public class TicketsAdapter extends RecyclerView.Adapter<TicketsAdapter.ViewHold
             AlertDialog.Builder builder = new AlertDialog.Builder(v.getContext());
             builder.setTitle(R.string.delete_ticket);
             builder.setMessage(R.string.delete_ticket_dialog);
-            builder.setPositiveButton(R.string.yes, (dialog, which) -> {
+            builder.setPositiveButton(R.string.ok, (dialog, which) -> {
 
                 new Thread(() -> {
                     AppDatabase db = AppDatabase.getInstance(v.getContext());

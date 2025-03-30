@@ -18,6 +18,9 @@
         android:usesCleartextTraffic="true"
         tools:targetApi="31">
         <activity
+            android:name=".view.UserLocationView"
+            android:exported="false" />
+        <activity
             android:name=".view.AddUserView"
             android:exported="false" />
         <activity
@@ -48,6 +51,7 @@
             </intent-filter>
         </activity>
         <activity android:name=".view.UsersView" />
+
         <meta-data
             android:name="com.mapbox.common.module.telemetry"
             android:value="false" />
