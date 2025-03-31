@@ -95,7 +95,9 @@ public class CategoriesListView extends MainActivity implements CategoryListCont
         cleanAndLoad();
     }
 
-    private void cleanAndLoad() {
+
+@Override
+public void cleanAndLoad() {
         categoryList.clear();
         presenter.loadCategories();
     }

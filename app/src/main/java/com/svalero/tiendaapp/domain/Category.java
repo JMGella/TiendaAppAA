@@ -7,14 +7,14 @@ public class Category {
     private long id;
     private String name;
     private String description;
-//    private LocalDate creationDate;
+    private String creationDate;
     private Boolean active;
     private String image;
 
-    public Category (String name, String description,/*LocalDate creationDate,*/ Boolean active, String image){
+    public Category (String name, String description,String creationDate, Boolean active, String image){
         this.name = name;
         this.description = description;
-//        this.creationDate = creationDate;
+        this.creationDate = creationDate;
         this.active = active;
         this.image = image;
     }
@@ -33,9 +33,9 @@ public class Category {
         this.description = description;
     }
 
-//    public void setCreationDate(LocalDate creationDate){
-//        this.creationDate = creationDate;
-//    }
+    public void setCreationDate(String creationDate){
+        this.creationDate = creationDate;
+    }
 
     public void setActive(Boolean active){
         this.active = active;
@@ -53,9 +53,9 @@ public class Category {
         return description;
     }
 
-//    public Date getCreationDate(){
-//        return creationDate;
-//    }
+    public String getCreationDate(){
+        return creationDate;
+    }
 
     public Boolean getActive(){
         return active;

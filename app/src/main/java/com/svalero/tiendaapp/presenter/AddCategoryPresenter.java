@@ -21,6 +21,39 @@ public class AddCategoryPresenter implements AddCategoryContract.Presenter, AddC
     }
 
     @Override
+    public void getCategoryById(long id) {
+        model.getCategoryById(id, new AddCategoryContract.Model.OnGetCategoryByIdListener() {
+            @Override
+            public void onGetCategoryByIdSuccess(Category category) {
+                view.setCategory(category);
+
+            }
+
+            @Override
+            public void onGetCategoryByIdFailure(String error) {
+                view.showErrorMessage(error);
+            }
+        });
+
+    }
+
+    @Override
+    public void updateCategory(long categoryId, Category category) {
+        model.updateCategory(categoryId, category, new AddCategoryContract.Model.OnUpdateCategoryListener() {
+            @Override
+            public void onUpdateCategorySuccess(Category category) {
+                view.showSuceessMessage("Categoría " + category.getName() + " actualizada correctamente");
+                view.goBack();
+            }
+
+            @Override
+            public void onUpdateCategoryFailure(String error) {
+                view.showErrorMessage(error);
+            }
+        });
+    }
+
+    @Override
     public void onAddCategoriesSuccess(Category category) {
         view.showSuceessMessage("Categoría " + category.getName() + " añadida correctamente");
         view.goBack();
@@ -28,7 +61,6 @@ public class AddCategoryPresenter implements AddCategoryContract.Presenter, AddC
 
     @Override
     public void onAddCategoriesFailure(String error) {
-        view.showErrorMessage(error);
 
     }
 }

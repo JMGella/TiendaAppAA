@@ -24,6 +24,12 @@ public interface TiendaApiInterface {
     @GET("categories")
     Call<List<Category>> getCategories();
 
+    @DELETE("categories/{categoryId}")
+    Call<Void> deleteCategory(@Path("categoryId") long categoryId);
+
+    @PUT("categories/{categoryId}")
+    Call<Category> updateCategory(@Path("categoryId") long categoryId, @Body Category category);
+
     @GET("products")
     Call<List<Product>> getProducts();
 

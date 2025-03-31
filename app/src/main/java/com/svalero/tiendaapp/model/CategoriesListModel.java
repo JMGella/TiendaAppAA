@@ -32,4 +32,23 @@ public class CategoriesListModel implements CategoryListContract.Model {
         });
 
     }
+
+    @Override
+    public void deleteCategory(Category category, OnDeleteCategoryListener listener) {
+        TiendaApiInterface apiInterface = TiendaApi.buildInstance();
+        Call<Void> call = apiInterface.deleteCategory(category.getId());
+
+        call.enqueue(new Callback<Void>() {
+            @Override
+            public void onResponse(Call<Void> call, Response<Void> response) {
+                listener.onDeleteCategorySuccess(category);
+            }
+
+            @Override
+            public void onFailure(Call<Void> call, Throwable t) {
+                listener.onDeleteCategoryFailure(t.getMessage());
+            }
+        });
+
+    }
 }

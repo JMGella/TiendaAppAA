@@ -91,7 +91,7 @@
             app:layout_constraintTop_toBottomOf="@id/tvBirthDate"
             tools:text="Member since: 01/01/2023" />
 
-        <!-- Botones de acción -->
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"

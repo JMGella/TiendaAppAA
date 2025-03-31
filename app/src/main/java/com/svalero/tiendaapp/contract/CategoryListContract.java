@@ -13,16 +13,24 @@ public interface CategoryListContract {
         }
         void loadCategories(OnLoadCategoriesListener listener);
 
+        interface OnDeleteCategoryListener{
+            void onDeleteCategorySuccess(Category category);
+            void onDeleteCategoryFailure(String error);
+        }
+
+        void deleteCategory(Category category, OnDeleteCategoryListener listener);
+
     }
 
     interface View {
         void listCategories(List<Category> categories);
         void showErrorMessage(String message);
         void showSuceessMessage(String message);
-
+        void cleanAndLoad();
     }
 
     interface Presenter{
         void loadCategories();
+        void deleteCategory(Category category);
     }
 }

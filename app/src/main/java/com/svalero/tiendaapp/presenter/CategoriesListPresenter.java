@@ -6,7 +6,7 @@ import com.svalero.tiendaapp.model.CategoriesListModel;
 
 import java.util.List;
 
-public class CategoriesListPresenter implements CategoryListContract.Presenter, CategoryListContract.Model.OnLoadCategoriesListener {
+public class CategoriesListPresenter implements CategoryListContract.Presenter, CategoryListContract.Model.OnLoadCategoriesListener{
 
     private CategoryListContract.View view;
     private CategoryListContract.Model model;
@@ -21,6 +21,8 @@ public class CategoriesListPresenter implements CategoryListContract.Presenter, 
         model.loadCategories(this);
     }
 
+
+
     @Override
     public void onLoadCategoriesSuccess(List<Category> categories) {
         view.listCategories(categories);
@@ -30,4 +32,23 @@ public class CategoriesListPresenter implements CategoryListContract.Presenter, 
     public void onLoadCategoriesFailure(String error) {
         view.showErrorMessage(error);
     }
+
+    @Override
+    public void deleteCategory(Category category) {
+        model.deleteCategory(category,new CategoryListContract.Model.OnDeleteCategoryListener() {
+            @Override
+            public void onDeleteCategorySuccess(Category category) {
+                view.showSuceessMessage("Categoría " + category.getName() + " eliminada correctamente");
+                view.cleanAndLoad();
+            }
+
+            @Override
+            public void onDeleteCategoryFailure(String error) {
+                view.showErrorMessage(error);
+            }
+        });
+    }
+
+
+
 }

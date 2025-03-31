@@ -44,4 +44,71 @@ public class AddCategoryModel implements AddCategoryContract.Model {
         });
 
     }
+
+    @Override
+    public void getCategoryById(long id, OnGetCategoryByIdListener listener) {
+        TiendaApiInterface apiInterface = TiendaApi.buildInstance();
+        Call<Category> call = apiInterface.getCategoryById(id);
+        call.enqueue(new Callback<Category>() {
+            @Override
+            public void onResponse(Call call, Response response) {
+                switch (response.code()) {
+                    case 200:
+                        listener.onGetCategoryByIdSuccess((Category) response.body());
+                        break;
+                    case 404:
+                        listener.onGetCategoryByIdFailure("Categoría no encontrada");
+                        break;
+                    case 500:
+                        listener.onGetCategoryByIdFailure("Error en el servidor");
+                        break;
+                    default:
+                        listener.onGetCategoryByIdFailure("Error desconocido");
+                        break;
+                }
+
+            }
+
+            @Override
+            public void onFailure(Call call, Throwable t) {
+                listener.onGetCategoryByIdFailure(t.getMessage());
+            }
+
+        });
+    }
+
+
+    @Override
+    public void updateCategory(long categoryId, Category category, OnUpdateCategoryListener listener) {
+        TiendaApiInterface apiInterface = TiendaApi.buildInstance();
+        Call<Category> call = apiInterface.updateCategory(categoryId, category);
+        call.enqueue(new Callback<Category>() {
+            @Override
+            public void onResponse(Call call, Response response) {
+                switch (response.code()) {
+                    case 200:
+                        listener.onUpdateCategorySuccess((Category) response.body());
+                        break;
+                    case 400:
+                        listener.onUpdateCategoryFailure("Error en la petición");
+                        break;
+                    case 500:
+                        listener.onUpdateCategoryFailure("Error en el servidor");
+                        break;
+                    default:
+                        listener.onUpdateCategoryFailure("Error desconocido");
+                        break;
+                }
+
+            }
+
+            @Override
+            public void onFailure(Call call, Throwable t) {
+                listener.onUpdateCategoryFailure(t.getMessage());
+            }
+
+        });
+    }
+
+
 }

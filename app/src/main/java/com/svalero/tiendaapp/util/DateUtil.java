@@ -28,4 +28,9 @@ public class DateUtil {
     public LocalDate today(){
         return LocalDate.now();
     }
+
+    public String formatString(String date) throws ParseException {
+        LocalDate localDate = parse(date);
+        return format(localDate);
+    }
 }
