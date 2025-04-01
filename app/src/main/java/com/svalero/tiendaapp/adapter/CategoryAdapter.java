@@ -12,14 +12,9 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.svalero.tiendaapp.R;
-import com.svalero.tiendaapp.contract.AddCategoryContract;
-import com.svalero.tiendaapp.contract.CategoryListContract;
-import com.svalero.tiendaapp.contract.UserContract;
+import com.svalero.tiendaapp.contract.CategoryContract;
 import com.svalero.tiendaapp.domain.Category;
-import com.svalero.tiendaapp.presenter.AddCategoryPresenter;
-import com.svalero.tiendaapp.presenter.CategoriesListPresenter;
-import com.svalero.tiendaapp.presenter.UserPresenter;
-import com.svalero.tiendaapp.util.DateUtil;
+import com.svalero.tiendaapp.presenter.CategoryPresenter;
 import com.svalero.tiendaapp.view.AddCategoryView;
 
 import java.util.ArrayList;
@@ -72,7 +67,7 @@ public class CategoryAdapter extends RecyclerView.Adapter<CategoryAdapter.ViewHo
                 builder.setTitle("Eliminar categoría");
                 builder.setMessage("¿Estás seguro de que quieres eliminar la categoría?");
                 builder.setPositiveButton(R.string.ok, (dialog, which) -> {
-                    CategoriesListPresenter presenter = new CategoriesListPresenter((CategoryListContract.View) v.getContext());
+                    CategoryPresenter presenter = new CategoryPresenter((CategoryContract.View) v.getContext());
                     presenter.deleteCategory(category);
                 });
                 builder.setNegativeButton(R.string.cancel, (dialog, which) -> dialog.dismiss());

@@ -2,7 +2,6 @@ package com.svalero.tiendaapp.model;
 
 import com.svalero.tiendaapp.api.TiendaApi;
 import com.svalero.tiendaapp.api.TiendaApiInterface;
-import com.svalero.tiendaapp.contract.CategoryListContract;
 import com.svalero.tiendaapp.contract.UserContract;
 import com.svalero.tiendaapp.domain.User;
 

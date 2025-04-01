@@ -14,17 +14,17 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.svalero.tiendaapp.R;
 import com.svalero.tiendaapp.adapter.CategoryAdapter;
 
-import com.svalero.tiendaapp.contract.CategoryListContract;
+import com.svalero.tiendaapp.contract.CategoryContract;
 import com.svalero.tiendaapp.domain.Category;
-import com.svalero.tiendaapp.presenter.CategoriesListPresenter;
+import com.svalero.tiendaapp.presenter.CategoryPresenter;
 
 import java.util.ArrayList;
 import java.util.List;
 
 
-public class CategoriesListView extends MainActivity implements CategoryListContract.View {
+public class CategoryView extends MainActivity implements CategoryContract.View {
 
-    private CategoryListContract.Presenter presenter;
+    private CategoryContract.Presenter presenter;
     private RecyclerView recyclerView;
     private CategoryAdapter categoryAdapter;
     private List<Category> categoryList;
@@ -37,7 +37,7 @@ public class CategoriesListView extends MainActivity implements CategoryListCont
         EdgeToEdge.enable(this);
         setContentView(R.layout.activity_categories);
 
-        presenter = new CategoriesListPresenter(this);
+        presenter = new CategoryPresenter(this);
         categoryList = new ArrayList<>();
 
         Toolbar toolbar = findViewById(R.id.toolbar);

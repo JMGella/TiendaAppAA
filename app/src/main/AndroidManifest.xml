@@ -33,13 +33,10 @@
             android:name=".view.AddCategoryView"
             android:exported="false" />
         <activity
-            android:name=".view.OrdersActivity"
+            android:name=".view.ProductsView"
             android:exported="false" />
         <activity
-            android:name=".view.ProductsActivity"
-            android:exported="false" />
-        <activity
-            android:name=".view.CategoriesListView"
+            android:name=".view.CategoryView"
             android:exported="false" />
         <activity
             android:name=".view.MainActivity"

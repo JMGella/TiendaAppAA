@@ -29,7 +29,6 @@ public class MainActivity extends AppCompatActivity {
         Button btnUsers = findViewById(R.id.btnUsers);
         Button btnCategories = findViewById(R.id.btnCategories);
         Button btnProducts = findViewById(R.id.btnProducts);
-        Button btnOrders = findViewById(R.id.btnOrders);
         Button btnTickets = findViewById(R.id.btnTickets);
 
 
@@ -41,19 +40,15 @@ public class MainActivity extends AppCompatActivity {
         });
 
         btnCategories.setOnClickListener(v -> {
-            Intent intent = new Intent(MainActivity.this, CategoriesListView.class);
+            Intent intent = new Intent(MainActivity.this, CategoryView.class);
             startActivity(intent);
         });
 
         btnProducts.setOnClickListener(v -> {
-            Intent intent = new Intent(MainActivity.this, ProductsActivity.class);
+            Intent intent = new Intent(MainActivity.this, ProductsView.class);
             startActivity(intent);
         });
 
-        btnOrders.setOnClickListener(v -> {
-            Intent intent = new Intent(MainActivity.this, OrdersActivity.class);
-            startActivity(intent);
-        });
 
         btnTickets.setOnClickListener(v -> {
             Intent intent = new Intent(MainActivity.this, TicketsView.class);

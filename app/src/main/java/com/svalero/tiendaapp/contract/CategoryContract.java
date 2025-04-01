@@ -4,7 +4,7 @@ import com.svalero.tiendaapp.domain.Category;
 
 import java.util.List;
 
-public interface CategoryListContract {
+public interface CategoryContract {
 
     interface Model {
         interface OnLoadCategoriesListener{

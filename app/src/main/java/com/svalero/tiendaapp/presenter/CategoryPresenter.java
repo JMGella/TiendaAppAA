@@ -1,19 +1,19 @@
 package com.svalero.tiendaapp.presenter;
 
-import com.svalero.tiendaapp.contract.CategoryListContract;
+import com.svalero.tiendaapp.contract.CategoryContract;
 import com.svalero.tiendaapp.domain.Category;
-import com.svalero.tiendaapp.model.CategoriesListModel;
+import com.svalero.tiendaapp.model.CategoryModel;
 
 import java.util.List;
 
-public class CategoriesListPresenter implements CategoryListContract.Presenter, CategoryListContract.Model.OnLoadCategoriesListener{
+public class CategoryPresenter implements CategoryContract.Presenter, CategoryContract.Model.OnLoadCategoriesListener{
 
-    private CategoryListContract.View view;
-    private CategoryListContract.Model model;
+    private CategoryContract.View view;
+    private CategoryContract.Model model;
 
-    public CategoriesListPresenter(CategoryListContract.View view) {
+    public CategoryPresenter(CategoryContract.View view) {
         this.view = view;
-        model = new CategoriesListModel();
+        model = new CategoryModel();
     }
 
     @Override
@@ -35,7 +35,7 @@ public class CategoriesListPresenter implements CategoryListContract.Presenter, 
 
     @Override
     public void deleteCategory(Category category) {
-        model.deleteCategory(category,new CategoryListContract.Model.OnDeleteCategoryListener() {
+        model.deleteCategory(category,new CategoryContract.Model.OnDeleteCategoryListener() {
             @Override
             public void onDeleteCategorySuccess(Category category) {
                 view.showSuceessMessage("Categoría " + category.getName() + " eliminada correctamente");

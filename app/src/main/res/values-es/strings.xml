@@ -53,6 +53,7 @@
     <string name="delete_user">Borrar Usuario</string>
     <string name="delete_user_dialog">¿Estas seguro de que quieres borrar el usuario?</string>
     <string name="edit_category">Editar Categoría</string>
+    <string name="product_deleted">Producto Eliminado </string>
     </resources>
 
 

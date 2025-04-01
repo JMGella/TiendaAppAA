@@ -2,7 +2,7 @@ package com.svalero.tiendaapp.model;
 
 import com.svalero.tiendaapp.api.TiendaApi;
 import com.svalero.tiendaapp.api.TiendaApiInterface;
-import com.svalero.tiendaapp.contract.CategoryListContract;
+import com.svalero.tiendaapp.contract.CategoryContract;
 import com.svalero.tiendaapp.domain.Category;
 
 import java.util.List;
@@ -11,7 +11,7 @@ import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
-public class CategoriesListModel implements CategoryListContract.Model {
+public class CategoryModel implements CategoryContract.Model {
     @Override
     public void loadCategories(OnLoadCategoriesListener listener) {
 
