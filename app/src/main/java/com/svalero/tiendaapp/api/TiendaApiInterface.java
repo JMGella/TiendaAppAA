@@ -69,6 +69,15 @@ public interface TiendaApiInterface {
     @DELETE("products/{productId}")
     Call<Void> deleteProductById(@Path("productId") long productId);
 
+    @POST("categories/{categoryId}/products")
+    Call<Product> addProduct(@Path("categoryId") long categoryId, @Body Product product);
+
+    @GET("products/{productId}")
+    Call<Product> getProductById(@Path("productId") long productId);
+
+    @PUT("categories/{categoryId}/products/{productId}")
+    Call<Product> updateProduct(@Path("categoryId") long categoryId, @Path("productId") long productId, @Body Product product);
+
 
     @POST("categories")
     Call<Category> addCategory(@Body Category category);

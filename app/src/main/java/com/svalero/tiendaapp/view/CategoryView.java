@@ -14,6 +14,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.svalero.tiendaapp.R;
 import com.svalero.tiendaapp.adapter.CategoryAdapter;
 
+import com.svalero.tiendaapp.adapter.CategoryAddProductAdapter;
 import com.svalero.tiendaapp.contract.CategoryContract;
 import com.svalero.tiendaapp.domain.Category;
 import com.svalero.tiendaapp.presenter.CategoryPresenter;
@@ -27,6 +28,7 @@ public class CategoryView extends MainActivity implements CategoryContract.View 
     private CategoryContract.Presenter presenter;
     private RecyclerView recyclerView;
     private CategoryAdapter categoryAdapter;
+    private CategoryAddProductAdapter categoryAddProductAdapter;
     private List<Category> categoryList;
 
 
@@ -45,28 +47,50 @@ public class CategoryView extends MainActivity implements CategoryContract.View 
             setSupportActionBar(toolbar);
             getSupportActionBar().setTitle(R.string.categories);
             setActivityTitle(getString(R.string.categories));
+            getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         }
 
+        if (getIntent().hasExtra("add_product")) {
 
-        recyclerView = findViewById(R.id.recyclerViewCategories);
-        recyclerView.setLayoutManager(new GridLayoutManager(this, 2));
+            Toast.makeText(this, "Selecciona una categoría", Toast.LENGTH_SHORT).show();
 
-        categoryAdapter = new CategoryAdapter(categoryList);
-        recyclerView.setAdapter(categoryAdapter);
+            recyclerView = findViewById(R.id.recyclerViewCategories);
+            recyclerView.setLayoutManager(new GridLayoutManager(this, 2));
+            categoryAddProductAdapter = new CategoryAddProductAdapter(categoryList);
+            recyclerView.setAdapter(categoryAddProductAdapter);
+
+        } else {
+
+            recyclerView = findViewById(R.id.recyclerViewCategories);
+            recyclerView.setLayoutManager(new GridLayoutManager(this, 2));
+
+            categoryAdapter = new CategoryAdapter(categoryList);
+            recyclerView.setAdapter(categoryAdapter);
+        }
 
     }
 
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
-        getMenuInflater().inflate(R.menu.menu_categories, menu);
-        return true;
+        if (!getIntent().hasExtra("add_product")) {
+            getMenuInflater().inflate(R.menu.menu_categories, menu);
+            return true;
+        }
+        return false;
     }
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
+
         if (item.getItemId() == R.id.action_new_category) {
             Intent intent = new Intent(this, AddCategoryView.class);
+            startActivity(intent);
+            return true;
+
+        }
+        if (item.getItemId() == android.R.id.home) {
+            Intent intent = new Intent(this, MainActivity.class);
             startActivity(intent);
             return true;
         }
@@ -76,7 +100,11 @@ public class CategoryView extends MainActivity implements CategoryContract.View 
     @Override
     public void listCategories(List<Category> categories) {
         this.categoryList.addAll(categories);
-        categoryAdapter.notifyDataSetChanged();
+        if (categoryAdapter != null) {
+            categoryAdapter.notifyDataSetChanged();
+        } else {
+            categoryAddProductAdapter.notifyDataSetChanged();
+        }
     }
 
     @Override

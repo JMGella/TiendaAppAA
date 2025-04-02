@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.Toast;
 
 import androidx.appcompat.widget.Toolbar;
@@ -21,11 +22,11 @@ import java.util.Locale;
 
 public class AddTicketView extends MainActivity {
 
-    private TextInputEditText etName;
-    private TextInputEditText etCategory;
-    private TextInputEditText etDescription;
-    private TextInputEditText etCreationDate;
-    private TextInputEditText etExpirationDate;
+    private EditText etName;
+    private EditText etCategory;
+    private EditText etDescription;
+    private EditText etCreationDate;
+    private EditText etExpirationDate;
     private SwitchMaterial swImportant;
     private Button btnSubmit;
     private AppDatabase db;

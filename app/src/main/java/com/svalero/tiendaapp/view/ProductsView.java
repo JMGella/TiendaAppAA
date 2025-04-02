@@ -1,6 +1,9 @@
 package com.svalero.tiendaapp.view;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.widget.Toast;
 
 
@@ -37,6 +40,7 @@ public class ProductsView extends MainActivity implements ProductsContract.View 
         if (toolbar != null) {
             setSupportActionBar(toolbar);
             getSupportActionBar().setTitle(R.string.products);
+            getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         }
 
         presenter = new ProductPresenter( this);
@@ -50,6 +54,28 @@ public class ProductsView extends MainActivity implements ProductsContract.View 
 
 
 
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.menu_products, menu);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        if (item.getItemId() == R.id.action_categories) {
+            Intent intent = new Intent(this, CategoryView.class);
+            intent.putExtra("add_product", true);
+            startActivity(intent);
+            return true;
+        }
+        if (item.getItemId() == android.R.id.home) {
+            Intent intent = new Intent(this, MainActivity.class);
+            startActivity(intent);
+            return true;
+        }
+        return super.onOptionsItemSelected(item);
     }
 
     @Override

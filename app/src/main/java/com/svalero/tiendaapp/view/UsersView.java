@@ -36,6 +36,7 @@ public class UsersView extends MainActivity implements UserContract.View {
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         getSupportActionBar().setTitle(getString(R.string.users));
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         setActivityTitle(getString(R.string.users));
 
         recyclerView = findViewById(R.id.recyclerViewUsers);
@@ -56,6 +57,11 @@ public class UsersView extends MainActivity implements UserContract.View {
     public boolean onOptionsItemSelected(MenuItem item) {
         if (item.getItemId() == R.id.action_add_user) {
             Intent intent = new Intent(this, AddUserView.class);
+            startActivity(intent);
+            return true;
+        }
+        if (item.getItemId() == android.R.id.home) {
+            Intent intent = new Intent(this, MainActivity.class);
             startActivity(intent);
             return true;
         }

@@ -1,5 +1,7 @@
 package com.svalero.tiendaapp.domain;
 
+import com.svalero.tiendaapp.contract.CategoryContract;
+
 public class Product {
     private long id;
     private String name;
@@ -8,15 +10,17 @@ public class Product {
     private String creationDate;
     private Boolean active;
     private String image;
+    private long categoryId;
 
 
-    public Product(String name, String description, Float price, String creationDate, Boolean active, String image){
+    public Product(String name, String description, Float price, String creationDate, Boolean active, String image, long categoryId){
         this.name = name;
         this.description = description;
         this.price = price;
         this.creationDate = creationDate;
         this.active = active;
         this.image = image;
+        this.categoryId = categoryId;
     }
 
     public long getId(){
@@ -47,6 +51,10 @@ public class Product {
         this.image = image;
     }
 
+    public void setCategoryId(long categoryId){
+        this.categoryId = categoryId;
+    }
+
     public String getName(){
         return name;
     }
@@ -69,6 +77,10 @@ public class Product {
 
     public String getImage(){
         return image;
+    }
+
+    public long getCategoryId(){
+        return categoryId;
     }
 
 }

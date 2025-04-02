@@ -45,12 +45,11 @@ import java.util.Locale;
 public class AddUserView extends MainActivity implements AddUserContract.View,  OnMapClickListener {
 
     private AddUserContract.Presenter presenter;
-    private TextInputEditText etName, etEmail, etPhone, etBirthDate, etAddress;
+    private EditText etName, etEmail, etPhone, etBirthDate, etAddress;
     private EditText etLatitude, etLongitude;
     private SwitchCompat swActive;
-    private Button btnSave, btnSelectLocation, btnGetCurrentLocation;
+    private Button btnSave;
     private MapView mapView;
-    private static final int LOCATION_PERMISSION_REQUEST_CODE = 1;
     private PointAnnotationManager pointAnnotationManager;
     private GesturesPlugin gesturesPlugin;
     private Point currentPoint;
@@ -172,7 +171,7 @@ public class AddUserView extends MainActivity implements AddUserContract.View,  
 
     }
     private void addMarker(double latitude, double longitude) {
-//        Bitmap iconBitmap = BitmapFactory.decodeResource(getResources(), R.drawable.ic_location_marker);
+
         PointAnnotationOptions pointAnnotationOptions = new PointAnnotationOptions()
                 .withPoint(Point.fromLngLat(longitude, latitude))
                 .withIconImage(BitmapFactory.decodeResource(getResources(), R.drawable.ic_location_marker));

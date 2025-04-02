@@ -33,6 +33,7 @@ public class TicketsView extends MainActivity {
         if (toolbar != null) {
             setSupportActionBar(toolbar);
             getSupportActionBar().setTitle(getString(R.string.tickets));
+            getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         }
 
         recyclerView = findViewById(R.id.recyclerViewTickets);
@@ -61,6 +62,11 @@ public class TicketsView extends MainActivity {
     public boolean onOptionsItemSelected(MenuItem item) {
         if (item.getItemId() == R.id.action_add) {
             Intent intent = new Intent(this, AddTicketView.class);
+            startActivity(intent);
+            return true;
+        }
+        if (item.getItemId() == android.R.id.home) {
+            Intent intent = new Intent(this, MainActivity.class);
             startActivity(intent);
             return true;
         }

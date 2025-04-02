@@ -54,7 +54,16 @@
     <string name="delete_user_dialog">¿Estas seguro de que quieres borrar el usuario?</string>
     <string name="edit_category">Editar Categoría</string>
     <string name="product_deleted">Producto Eliminado </string>
-    </resources>
+    <string name="add_product">Añadir Producto</string>
+    <string name="delete_product">Borrar Producto</string>
+    <string name="delete_product_dialog">¿Estas seguro de borrar el producto?</string>
+    <string name="product_name">Nombre del producto</string>
+    <string name="product_description">Descripción</string>
+    <string name="product_price">Precio</string>
+    <string name="select">Seleccionar</string>
+
+
+</resources>
 
 
 
