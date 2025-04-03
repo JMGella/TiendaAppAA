@@ -1,14 +1,12 @@
 package com.svalero.tiendaapp.model;
 
-import android.util.Log;
 
-import com.google.gson.Gson;
 import com.svalero.tiendaapp.api.TiendaApi;
 import com.svalero.tiendaapp.api.TiendaApiInterface;
 import com.svalero.tiendaapp.contract.AddProductContract;
 import com.svalero.tiendaapp.domain.Product;
 
-import java.io.IOException;
+
 
 import retrofit2.Call;
 import retrofit2.Callback;

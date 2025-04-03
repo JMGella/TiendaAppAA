@@ -2,7 +2,7 @@ package com.svalero.tiendaapp.model;
 
 
 import android.content.Context;
-import android.view.View;
+
 
 import androidx.room.Room;
 

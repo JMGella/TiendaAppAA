@@ -2,8 +2,6 @@ package com.svalero.tiendaapp.domain;
 
 import androidx.room.Entity;
 
-import java.time.LocalDate;
-import java.util.Date;
 
 @Entity
 public class User {

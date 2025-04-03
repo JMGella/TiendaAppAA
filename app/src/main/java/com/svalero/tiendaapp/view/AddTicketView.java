@@ -1,8 +1,7 @@
 package com.svalero.tiendaapp.view;
 
-import android.app.DatePickerDialog;
+
 import android.os.Bundle;
-import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -11,7 +10,6 @@ import android.widget.Toast;
 import androidx.appcompat.widget.Toolbar;
 
 import com.google.android.material.switchmaterial.SwitchMaterial;
-import com.google.android.material.textfield.TextInputEditText;
 import com.svalero.tiendaapp.R;
 import com.svalero.tiendaapp.db.AppDatabase;
 import com.svalero.tiendaapp.db.Ticket;
@@ -141,7 +139,7 @@ public class AddTicketView extends MainActivity {
                 db.ticketDao().insert(ticket);
                 runOnUiThread(() -> {
                     Toast.makeText(AddTicketView.this, "Ticket guardado correctamente", Toast.LENGTH_SHORT).show();
-                    finish(); // Volver a la actividad anterior
+                    finish();
                 });
             }).start();
 

@@ -14,10 +14,8 @@ import com.svalero.tiendaapp.R;
 import com.svalero.tiendaapp.contract.UserContract;
 import com.svalero.tiendaapp.domain.User;
 import com.svalero.tiendaapp.presenter.UserPresenter;
-import com.svalero.tiendaapp.util.DateUtil;
-import com.svalero.tiendaapp.view.AddUserView;
 import com.svalero.tiendaapp.view.UserLocationView;
-import com.svalero.tiendaapp.view.UsersView;
+
 
 import java.util.ArrayList;
 import java.util.List;

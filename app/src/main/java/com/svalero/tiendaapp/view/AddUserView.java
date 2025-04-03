@@ -1,22 +1,19 @@
 package com.svalero.tiendaapp.view;
 
 import android.app.DatePickerDialog;
-import android.graphics.Bitmap;
+
 import android.graphics.BitmapFactory;
 import android.os.Bundle;
 
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.ImageView;
+
 import android.widget.Toast;
 
 import androidx.activity.EdgeToEdge;
 import androidx.annotation.NonNull;
 import androidx.appcompat.widget.SwitchCompat;
 import androidx.appcompat.widget.Toolbar;
-
-
-import com.google.android.material.textfield.TextInputEditText;
 import com.mapbox.geojson.Point;
 import com.mapbox.maps.MapView;
 import com.mapbox.maps.Style;
@@ -36,7 +33,6 @@ import com.svalero.tiendaapp.presenter.AddUserPresenter;
 import com.svalero.tiendaapp.util.DateUtil;
 
 
-import java.text.ParseException;
 import java.time.LocalDate;
 import java.util.Calendar;
 import java.util.Locale;
@@ -53,7 +49,6 @@ public class AddUserView extends MainActivity implements AddUserContract.View,  
     private PointAnnotationManager pointAnnotationManager;
     private GesturesPlugin gesturesPlugin;
     private Point currentPoint;
-    private DateUtil dateUtil = new DateUtil();
     private String latitude;
     private String longitude;
 

@@ -1,6 +1,6 @@
 package com.svalero.tiendaapp.domain;
 
-import java.time.LocalDate;
+
 
 
 public class Category {

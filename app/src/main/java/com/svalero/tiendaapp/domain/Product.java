@@ -1,6 +1,6 @@
 package com.svalero.tiendaapp.domain;
 
-import com.svalero.tiendaapp.contract.CategoryContract;
+
 
 public class Product {
     private long id;

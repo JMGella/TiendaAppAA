@@ -1,10 +1,9 @@
 package com.svalero.tiendaapp.view;
 
-import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.graphics.BitmapFactory;
 import android.os.Bundle;
-import android.view.Menu;
+
 import android.view.MenuItem;
 
 import androidx.activity.EdgeToEdge;
@@ -12,7 +11,7 @@ import androidx.activity.EdgeToEdge;
 import androidx.appcompat.widget.Toolbar;
 
 import com.mapbox.geojson.Point;
-import com.mapbox.maps.CameraOptions;
+
 import com.mapbox.maps.MapView;
 import com.mapbox.maps.Style;
 import com.mapbox.maps.plugin.annotation.AnnotationConfig;
@@ -21,7 +20,6 @@ import com.mapbox.maps.plugin.annotation.AnnotationPluginImplKt;
 import com.mapbox.maps.plugin.annotation.generated.PointAnnotationManager;
 import com.mapbox.maps.plugin.annotation.generated.PointAnnotationManagerKt;
 import com.mapbox.maps.plugin.annotation.generated.PointAnnotationOptions;
-import com.mapbox.maps.plugin.gestures.GesturesUtils;
 import com.svalero.tiendaapp.R;
 
 public class UserLocationView extends MainActivity {
@@ -94,7 +92,7 @@ public class UserLocationView extends MainActivity {
     }
 
     private void addMarker(double latitude, double longitude) {
-//        Bitmap iconBitmap = BitmapFactory.decodeResource(getResources(), R.drawable.ic_location_marker);
+
         PointAnnotationOptions pointAnnotationOptions = new PointAnnotationOptions()
                 .withPoint(Point.fromLngLat(longitude, latitude))
                 .withIconImage(BitmapFactory.decodeResource(getResources(), R.drawable.ic_location_marker));

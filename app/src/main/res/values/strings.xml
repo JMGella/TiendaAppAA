@@ -61,6 +61,7 @@
     <string name="product_description">Description</string>
     <string name="product_price">Price</string>
     <string name="select">Select</string>
+    <string name="edit_product">Edit Product</string>
 </resources>
 
 

@@ -2,6 +2,7 @@ package com.svalero.tiendaapp.view;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.widget.Button;
 import android.widget.EditText;
 
@@ -27,6 +28,7 @@ public class AddProductView extends MainActivity implements AddProductContract.V
     private EditText etProductDescription;
     private EditText etProductPrice;
     private Button btnSaveProduct;
+    private long categoryId;
 
     private AddProductContract.Presenter presenter;
 
@@ -38,14 +40,32 @@ public class AddProductView extends MainActivity implements AddProductContract.V
 
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-        getSupportActionBar().setTitle(R.string.add_product);
 
         etProductName = findViewById(R.id.etProductName);
         etProductDescription = findViewById(R.id.etProductDescription);
         etProductPrice = findViewById(R.id.etProductPrice);
         btnSaveProduct = findViewById(R.id.btnSubmit);
+        presenter = new AddProductPresenter(this);
 
-        btnSaveProduct.setOnClickListener(view -> saveProduct());
+        if (getIntent().hasExtra("PRODUCT_ID")) {
+            setActivityTitle(getString(R.string.edit_product));
+            long productId = getIntent().getLongExtra("PRODUCT_ID", 0);
+            presenter.getProductById(productId);
+            btnSaveProduct.setOnClickListener(view -> {
+                String name = etProductName.getText().toString();
+                String description = etProductDescription.getText().toString();
+                String priceString = etProductPrice.getText().toString();
+                float price = Float.parseFloat(priceString);
+                Product productToUpdate = new Product(name, description, price, LocalDate.now().toString(), true, "noimage.jpg", categoryId);
+
+                presenter.updateProduct(categoryId, productId, productToUpdate);
+            });
+
+
+        } else {
+            setActivityTitle(getString(R.string.add_product));
+            btnSaveProduct.setOnClickListener(view -> saveProduct());
+        }
 
     }
 
@@ -58,11 +78,12 @@ public class AddProductView extends MainActivity implements AddProductContract.V
 
         String creationDate = LocalDate.now().toString();
 
-        long categoryId = getIntent().getLongExtra("CATEGORY_ID", 0);
+        if (getIntent().hasExtra("CATEGORY_ID")) {
+            categoryId = getIntent().getLongExtra("CATEGORY_ID", 0);
+        }
 
         Product product = new Product(name, description, price, creationDate, true, "noimage.jpg", categoryId);
 
-        presenter = new AddProductPresenter(this);
         presenter.addProduct(categoryId, product);
     }
 
@@ -83,6 +104,8 @@ public class AddProductView extends MainActivity implements AddProductContract.V
         String name = product.getName();
         String description = product.getDescription();
         Float price = product.getPrice();
+        categoryId = product.getCategoryId();
+        Log.d("AddProductView", "Category ID: " + categoryId);
 
         etProductName.setText(name);
         etProductDescription.setText(description);

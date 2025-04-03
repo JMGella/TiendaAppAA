@@ -3,6 +3,7 @@ package com.svalero.tiendaapp.adapter;
 import android.annotation.SuppressLint;
 import android.app.AlertDialog;
 import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -13,17 +14,14 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.svalero.tiendaapp.R;
-import com.svalero.tiendaapp.api.TiendaApi;
-import com.svalero.tiendaapp.api.TiendaApiInterface;
-import com.svalero.tiendaapp.contract.AddCategoryContract;
-import com.svalero.tiendaapp.contract.CategoryContract;
+
 import com.svalero.tiendaapp.contract.ProductsContract;
 import com.svalero.tiendaapp.domain.Product;
-import com.svalero.tiendaapp.presenter.AddCategoryPresenter;
-import com.svalero.tiendaapp.presenter.CategoryPresenter;
+
 import com.svalero.tiendaapp.presenter.ProductPresenter;
 
-import java.util.ArrayList;
+import com.svalero.tiendaapp.view.AddProductView;
+
 import java.util.List;
 import java.util.Locale;
 
@@ -56,6 +54,14 @@ public class ProductAdapter extends RecyclerView.Adapter<ProductAdapter.ViewHold
         holder.tvProductDescription.setText(product.getDescription());
         holder.tvProductPrice.setText(String.format(Locale.getDefault(), "%.2f €", product.getPrice()));
         holder.tvProductDate.setText(product.getCreationDate());
+
+        holder.btnEditProduct.setOnClickListener(
+                v ->{
+                    Intent intent = new Intent(v.getContext(), AddProductView.class);
+                    intent.putExtra("PRODUCT_ID", product.getId());
+                    v.getContext().startActivity(intent);
+                }
+        );
 
         holder.btnDeleteProduct.setOnClickListener(
                 v -> {

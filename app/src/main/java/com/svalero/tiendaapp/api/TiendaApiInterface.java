@@ -33,23 +33,8 @@ public interface TiendaApiInterface {
     @GET("products")
     Call<List<Product>> getProducts();
 
-    @GET("orders")
-    Call<List<Order>> getOrders();
-
-    @GET("oderDetails")
-    Call<List<OrderDetail>> getOrderDetails();
-
     @GET("categories/{categoryId}")
     Call<Category> getCategoryById(@Path("categoryId") long categoryId);
-
-    @GET("users/{userId}/orders")
-    Call<List<Order>> getUserOrders(@Path("userId") long userId);
-
-    @GET("users/{userId}/orders/{orderId}/details")
-    Call<List<OrderDetail>> getOrderDetails(@Path("userId") long userId, @Path("orderId") long orderId);
-
-    @GET("categories/{categoryId}/products")
-    Call<List<Product>> getCategoryProducts(@Path("categoryId") long categoryId);
 
     @GET("users/{userId}")
     Call<User> getUserById(@Path("userId") long userId);
@@ -60,11 +45,6 @@ public interface TiendaApiInterface {
     @DELETE("users/{userId}")
     Call<Void> deleteUser(@Path("userId") long userId);
 
-    @POST("users/{userId}/orders")
-    Call<Order> createOrder(@Path("userId") long userId, @Body Order order);
-
-    @POST("users/{userId}/orders/{orderId}/details")
-    Call<OrderDetail> addOrderDetails(@Path("userId") long userId, @Path("orderId") int orderId, @Body OrderDetail orderDetail);
 
     @DELETE("products/{productId}")
     Call<Void> deleteProductById(@Path("productId") long productId);

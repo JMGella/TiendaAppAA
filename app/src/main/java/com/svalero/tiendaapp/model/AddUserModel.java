@@ -3,7 +3,6 @@ package com.svalero.tiendaapp.model;
 import com.svalero.tiendaapp.api.TiendaApi;
 import com.svalero.tiendaapp.api.TiendaApiInterface;
 import com.svalero.tiendaapp.contract.AddUserContract;
-import com.svalero.tiendaapp.domain.Category;
 import com.svalero.tiendaapp.domain.User;
 
 import retrofit2.Call;

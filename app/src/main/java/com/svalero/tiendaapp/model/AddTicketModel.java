@@ -6,7 +6,6 @@ import android.widget.Toast;
 
 import androidx.room.Room;
 
-import com.google.android.material.snackbar.Snackbar;
 import com.svalero.tiendaapp.contract.AddTicketContract;
 import com.svalero.tiendaapp.db.AppDatabase;
 import com.svalero.tiendaapp.db.Ticket;
